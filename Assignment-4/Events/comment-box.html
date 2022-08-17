@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment-Box</title>
+</head>
+
+<body>
+
+    <h1>Please Comment Us!!</h1>
+    <div id="comment-container">
+        <p>Abdus Sami Rahat</p>
+        <p>Shuna Moyna</p>
+        <p>kolizar Tukra</p>
+    </div>
+    <textarea name="" id="comment-box" cols="50" rows="5"></textarea>
+    <br>
+    <button id="click-post">Post</button>
+
+
+    <script>
+        // STER-1: add event listener to the button
+        document.getElementById('click-post').addEventListener('click', function() {
+
+            // STER-2: get the comment inside the  textarea
+            const CommentBox = document.getElementById("comment-box");
+            const NewCommentBox = CommentBox.value;
+            // STER-3: get the comment-container
+            const commentContainer = document.getElementById('comment-container');
+            // STER-4: create a new element (p tag)
+            const p = document.createElement('p');
+            // STER-5: set the text of text of the  comment as innerText of the p tag
+            p.innerText = NewCommentBox;
+            // STER-6: ad the p tag to the comment-container using appendChild
+            commentContainer.appendChild(p);
+            // final: clear the comment-box 
+            CommentBox.value = '';
+        })
+    </script>
+</body>
+
+</html>
